@@ -1,5 +1,6 @@
 package conta_bancaria;
 
+import conta_bancaria.model.Conta;
 import conta_bancaria.util.Cores;
 import java.util.Scanner;
 
@@ -9,6 +10,22 @@ public class Menu {
 
         Scanner leia = new Scanner(System.in);
         int opcao;
+        
+        Conta c1 = new Conta(1, 123, 1, "Cristiano", 5000000);
+        c1.visualizar();
+        
+        //Sacar
+        c1.sacar(600000);
+        c1.visualizar();
+        
+        //Depositar
+        c1.depositar(1000);
+        c1.visualizar();
+        
+        c1.setTitular("Cristiano Forner");
+        c1.visualizar();
+        c1.setSaldo(100000);
+        c1.visualizar();
 
         while (true) {
             System.out.println(Cores.TEXT_YELLOW_BOLD_BRIGHT + Cores.ANSI_BLACK_BACKGROUND);
