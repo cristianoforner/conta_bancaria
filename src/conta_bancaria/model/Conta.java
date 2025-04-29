@@ -86,7 +86,6 @@ public class Conta {
 		NumberFormat nfMoeda = NumberFormat.getCurrencyInstance();
 		
 		String tipo = "";
-		
 		switch (this.tipo ) {
 		
 		case 1 -> tipo = "Conta Corrente";
