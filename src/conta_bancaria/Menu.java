@@ -44,13 +44,14 @@ public class Menu {
             System.out.println("║ 6️-  Sacar                                                      ║");
             System.out.println("║ 7️-  Depositar                                                  ║");
             System.out.println("║ 8️-  Transferir valores entre Contas                            ║");
-            System.out.println("║ 9️-  Sair                                                       ║");
+            System.out.println("║ 9️-  Listar Contas Por Titular                                  ║");
+            System.out.println("║ 0-  Sair                                                       ║");
             System.out.println("╚════════════════════════════════════════════════════════════════╝");
             System.out.print( Cores.TEXT_RESET + Cores.TEXT_YELLOW_BOLD_BRIGHT + "👉 Escolha uma opção: ");
 
             opcao = leia.nextInt();
 
-            if (opcao == 9) {
+            if (opcao == 0) {
                 System.out.println(Cores.TEXT_YELLOW_BOLD_BRIGHT + "\n🏦 Banco do Brazil com Z - O seu Futuro começa aqui!\n" + Cores.TEXT_RESET);
                 sobre();
                 leia.close();
@@ -129,6 +130,17 @@ public class Menu {
                     System.out.println(Cores.TEXT_CYAN_BOLD + "\n🔁 Transferência entre Contas\n");
                     keyPress();
                     break;
+                case 9: 
+                	System.out.println(Cores.TEXT_CYAN_BOLD + "\n🔍Consultar Contas por Titular\n");
+                	
+                	System.out.println("\nDigite o nome do Titular:\n");
+                	leia.skip("\\R");
+                	titular= leia.nextLine();
+                	
+                	contas.listarPorTitular(titular);
+                	
+                	keyPress();
+                	break;
                 default:
                     System.out.println(Cores.TEXT_RED_BOLD + "\n❌ Opção Inválida!\n" + Cores.TEXT_RESET);
                     keyPress();
